@@ -76,7 +76,7 @@ jobs:
 
     - name: Compatibility fix for wrap-wrap@1.2.4 - 1.2.5 for Node.js 4 (eslint@>=2 <=7.0.0-alpha.3 > optionator@^0.8 > word-wrap@~1.2.3)
       run: sed -i 's/let/var/g' ./node_modules/eslint/node_modules/optionator/node_modules/word-wrap/index.js
-      if: node-version == '4.x'
+      if: matrix.node-version == '4.x'
 
     - run: npm run build --if-present
     - run: npm test

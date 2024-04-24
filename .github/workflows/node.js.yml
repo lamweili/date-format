@@ -72,7 +72,7 @@ jobs:
       if: matrix.npm-i == '' && steps.npm-version.outputs.major > 5
 
     - name: List dependencies
-      run: npm ls --depth=0 --dev | npm ls --depth=0 --prod
+      run: npm ls --depth=0 --dev; npm ls --depth=0 --prod
       continue-on-error: true
 
     - name: Compatibility fix for wrap-wrap@1.2.4 - 1.2.5 for Node.js 4 (eslint@>=2 <=7.0.0-alpha.3 > optionator@^0.8 > word-wrap@~1.2.3)
